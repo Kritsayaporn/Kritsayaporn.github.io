@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>My Portfolio</title>
+
     <style>
         * {
             margin: 0;
@@ -17,6 +18,34 @@
             overflow-x: hidden;
         }
 
+        /* ===== Header ห้อยด้านบน ===== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 15px 80px;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            transition: transform 0.4s ease;
+            z-index: 1000;
+        }
+
+        header.hidden {
+            transform: translateY(-100%);
+        }
+
+        header h3 {
+            font-size: 22px;
+            color: #ffffff;
+        }
+
+        header h3 span {
+            color: #1e90ff;
+        }
+
         section {
             height: 100vh;
             width: 100%;
@@ -25,7 +54,7 @@
             padding: 0 80px;
         }
 
-        /* หน้าแรก */
+        /* ===== หน้าแรก ===== */
         .hero {
             justify-content: flex-start;
         }
@@ -33,7 +62,14 @@
         .name-box h1 {
             font-size: 64px;
             letter-spacing: 2px;
-            color: #ffffff;
+            cursor: pointer;
+            transition: transform 0.3s ease, text-shadow 0.3s ease;
+        }
+
+        /* เอฟเฟกต์เด้งตอน hover */
+        .name-box h1:hover {
+            transform: scale(1.08);
+            text-shadow: 0 0 15px rgba(30, 144, 255, 0.8);
         }
 
         .name-box span {
@@ -46,7 +82,7 @@
             color: #aaaaaa;
         }
 
-        /* หน้าสาขา */
+        /* ===== หน้าสาขา ===== */
         .major {
             justify-content: center;
             text-align: center;
@@ -67,7 +103,6 @@
             color: #cccccc;
         }
 
-        /* เส้นตกแต่ง */
         .line {
             width: 80px;
             height: 4px;
@@ -77,6 +112,11 @@
     </style>
 </head>
 <body>
+
+    <!-- Header -->
+    <header id="header">
+        <h3>Kritsayaporn <span>Insopa</span></h3>
+    </header>
 
     <!-- หน้าแรก -->
     <section class="hero">
@@ -89,11 +129,31 @@
     <!-- สาขา -->
     <section class="major">
         <div>
-            <h2>Major<span>PhysIoT</span></h2>
+            <h2>MAJOR <span>PhysIoTE</span></h2>
             <div class="line"></div>
-            <p>67050021</p>
+            <p>หลงใหลในเทคโนโลยี การออกแบบ และการสร้างสิ่งใหม่ๆ</p>
         </div>
     </section>
+
+    <!-- JavaScript -->
+    <script>
+        let lastScroll = 0;
+        const header = document.getElementById("header");
+
+        window.addEventListener("scroll", () => {
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > lastScroll) {
+                // เลื่อนลง -> ซ่อน
+                header.classList.add("hidden");
+            } else {
+                // เลื่อนขึ้น -> โชว์
+                header.classList.remove("hidden");
+            }
+
+            lastScroll = currentScroll;
+        });
+    </script>
 
 </body>
 </html>
