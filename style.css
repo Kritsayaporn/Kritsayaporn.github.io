@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    color: white;
+    background: black;
+    overflow-x: hidden;
+}
+
+/* ===== HEADER ===== */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 15px 80px;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(10px);
+    transition: 0.4s;
+    z-index: 1000;
+}
+
+header.hidden {
+    transform: translateY(-100%);
+}
+
+header span {
+    color: #4da6ff;
+}
+
+/* ===== SECTION ===== */
+section {
+    height: 100vh;
+    width: 100%;
+    padding: 0 80px;
+    display: flex;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+}
+
+/* ===== HERO ===== */
+.hero {
+    justify-content: flex-start;
+    background-image:
+        linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)),
+        url("images/hero-bg.jpg");
+}
+
+.name-box h1 {
+    font-size: 64px;
+    letter-spacing: 2px;
+}
+
+.name-box span {
+    color: #4da6ff;
+}
+
+.name-box p {
+    margin-top: 20px;
+    color: #ccc;
+}
+
+/* ===== MAJOR ===== */
+.major {
+    justify-content: center;
+    text-align: center;
+    background-image:
+        linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.9)),
+        url("images/major-bg.jpg");
+}
+
+.major-box h2 {
+    font-size: 42px;
+}
+
+.major-box h3 {
+    font-size: 32px;
+    color: #ff3b3b;
+}
+
+.line {
+    width: 90px;
+    height: 4px;
+    margin: 25px auto;
+    background: linear-gradient(to right, #4da6ff, #ff3b3b);
+}
