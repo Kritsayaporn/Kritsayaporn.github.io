@@ -1,183 +1,159 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-<meta charset="UTF-8">
-<title>My Portfolio</title>
+    <meta charset="UTF-8">
+    <title>My Portfolio</title>
 
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, sans-serif;
-}
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+        }
 
-body {
-    background: #0b0b0b;
-    color: #fff;
-    overflow-x: hidden;
-}
+        body {
+            background: linear-gradient(135deg, #0f0f0f, #1c1c1c);
+            color: #ffffff;
+            overflow-x: hidden;
+        }
 
-/* ===== Parallax Background ===== */
-.parallax {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 120%;
-    background: radial-gradient(circle at top, #1e1e1e, #050505);
-    z-index: -1;
-    transform: translateY(0);
-}
+        /* ===== Header ห้อยด้านบน ===== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 15px 80px;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            transition: transform 0.4s ease;
+            z-index: 1000;
+        }
 
-/* ===== Header ===== */
-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    padding: 15px 80px;
-    background: rgba(0,0,0,0.6);
-    backdrop-filter: blur(10px);
-    transition: transform 0.4s ease;
-    z-index: 1000;
-}
+        header.hidden {
+            transform: translateY(-100%);
+        }
 
-header.hidden {
-    transform: translateY(-100%);
-}
+        header h3 {
+            font-size: 22px;
+            color: #ffffff;
+        }
 
-header h3 span {
-    color: #000033;
-}
+        header h3 span {
+            color: #CCE9FD;
+        }
 
-/* ===== Section ===== */
-section {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    padding: 0 80px;
-}
+        section {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            padding: 0 80px;
+        }
 
-/* ===== Hero ===== */
-.hero {
-    justify-content: flex-start;
-}
+        /* ===== หน้าแรก ===== */
+        .hero {
+            justify-content: flex-start;
+        }
 
-.name-box h1 {
-    font-size: 64px;
-    cursor: pointer;
-    animation: float 4s ease-in-out infinite;
-    transition: text-shadow 0.2s;
-}
+        .name-box h1 {
+            font-size: 64px;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: transform 0.3s ease, text-shadow 0.3s ease;
+        }
 
-/* Spring Bounce */
-.name-box h1:hover {
-    animation: spring 0.6s cubic-bezier(.25,1.5,.5,1);
-    text-shadow:
-        0 0 10px #006699,
-        0 0 20px #000033,
-        0 0 40px #990000;
-}
+        /* เอฟเฟกต์เด้งตอน hover */
+        .name-box h1:hover {
+            transform: scale(1.08);
+            text-shadow: 0 0 15px rgba(30, 144, 255, 0.8);
+        }
 
-/* Neon */
-.name-box span {
-    color: #000033;
-}
+        .name-box span {
+            color: #CCE9FD;
+        }
 
-.name-box p {
-    margin-top: 15px;
-    color: #aaa;
-}
+        .name-box p {
+            margin-top: 15px;
+            font-size: 18px;
+            color: #aaaaaa;
+        }
 
-/* ===== Major ===== */
-.major {
-    justify-content: center;
-    text-align: center;
-}
+        /* ===== หน้าสาขา ===== */
+        .major {
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(180deg, #1c1c1c, #0f0f0f);
+        }
 
-.major h2 span {
-    color: #990000;
-}
+        .major h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
 
-.line {
-    width: 80px;
-    height: 4px;
-    margin: 20px auto;
-    background: linear-gradient(to right, #1e90ff, #ff3b3b);
-}
+        .major h2 span {
+            color: #900;
+        }
 
-/* ===== Animations ===== */
-@keyframes spring {
-    0% { transform: scale(1); }
-    40% { transform: scale(1.15); }
-    60% { transform: scale(0.95); }
-    80% { transform: scale(1.05); }
-    100% { transform: scale(1); }
-}
+        .major p {
+            font-size: 20px;
+            color: #cccccc;
+        }
 
-@keyframes float {
-    0%,100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
-}
-</style>
+        .line {
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, #CCE9FD, #900);
+            margin: 25px auto;
+        }
+    </style>
 </head>
-
 <body>
 
-<div class="parallax" id="parallax"></div>
+    <!-- Header -->
+    <header id="header">
+        <h3>We're <span>PhysIoT</span></h3>
+    </header>
 
-<header id="header">
-    <h3>We're <span>PhysIoT</span></h3>
-</header>
+    <!-- หน้าแรก -->
+    <section class="hero">
+        <div class="name-box">
+            <h1>Hi, I'm <span>Kritsayaporn Insopa</span></h1>
+            <p>Creative • Tech • Future Developer</p>
+        </div>
+    </section>
 
-<section class="hero">
-    <div class="name-box">
-        <h1 id="nameText">Hi, I'm <span>Kritsayaporn Insopa</span></h1>
-        <p>Creative • Tech • Future Developer</p>
-    </div>
-</section>
+    <!-- สาขา -->
+    <section class="major">
+        <div>
+            <h2>Major <span>PhysIoT</span></h2>
+            <div class="line"></div>
+            <p>67050021</p>
+        </div>
+    </section>
 
-<section class="major">
-    <div>
-        <h2>MAJOR<span>PhysIoT</span></h2>
-        <div class="line"></div>
-        <p>หลงใหลในเทคโนโลยี การออกแบบ และการสร้างสิ่งใหม่ๆ</p>
-    </div>
-</section>
+    <!-- JavaScript -->
+    <script>
+        let lastScroll = 0;
+        const header = document.getElementById("header");
 
-<!-- Hover Sound -->
-<audio id="hoverSound" src="https://assets.mixkit.co/sfx/preview/mixkit-click-melodic-tone-1129.mp3"></audio>
+        window.addEventListener("scroll", () => {
+            const currentScroll = window.pageYOffset;
 
-<script>
-/* Header show/hide */
-let lastScroll = 0;
-const header = document.getElementById("header");
+            if (currentScroll > lastScroll) {
+                // เลื่อนลง -> ซ่อน
+                header.classList.add("hidden");
+            } else {
+                // เลื่อนขึ้น -> โชว์
+                header.classList.remove("hidden");
+            }
 
-window.addEventListener("scroll", () => {
-    let currentScroll = window.pageYOffset;
-
-    if (currentScroll > lastScroll) {
-        header.classList.add("hidden");
-    } else {
-        header.classList.remove("hidden");
-    }
-    lastScroll = currentScroll;
-
-    /* Parallax */
-    document.getElementById("parallax").style.transform =
-        `translateY(${currentScroll * 0.3}px)`;
-});
-
-/* Hover sound */
-const nameText = document.getElementById("nameText");
-const hoverSound = document.getElementById("hoverSound");
-
-nameText.addEventListener("mouseenter", () => {
-    hoverSound.currentTime = 0;
-    hoverSound.volume = 0.2;
-    hoverSound.play();
-});
-</script>
+            lastScroll = currentScroll;
+        });
+    </script>
 
 </body>
 </html>
