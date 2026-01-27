@@ -1,11 +1,99 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>67050021</title>
+    <title>My Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f0f0f, #1c1c1c);
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        section {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            padding: 0 80px;
+        }
+
+        /* หน้าแรก */
+        .hero {
+            justify-content: flex-start;
+        }
+
+        .name-box h1 {
+            font-size: 64px;
+            letter-spacing: 2px;
+            color: #ffffff;
+        }
+
+        .name-box span {
+            color: #1e90ff;
+        }
+
+        .name-box p {
+            margin-top: 15px;
+            font-size: 18px;
+            color: #aaaaaa;
+        }
+
+        /* หน้าสาขา */
+        .major {
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(180deg, #1c1c1c, #0f0f0f);
+        }
+
+        .major h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .major h2 span {
+            color: #ff3b3b;
+        }
+
+        .major p {
+            font-size: 20px;
+            color: #cccccc;
+        }
+
+        /* เส้นตกแต่ง */
+        .line {
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, #1e90ff, #ff3b3b);
+            margin: 25px auto;
+        }
+    </style>
 </head>
 <body>
-    67050021 Kritsayaporn Insopa
+
+    <!-- หน้าแรก -->
+    <section class="hero">
+        <div class="name-box">
+            <h1>Hi, I'm <span>Kritsayaporn Insopa</span></h1>
+            <p>Creative • Tech • Future Developer</p>
+        </div>
+    </section>
+
+    <!-- สาขา -->
+    <section class="major">
+        <div>
+            <h2>Major<span>PhysIoT</span></h2>
+            <div class="line"></div>
+            <p>67050021</p>
+        </div>
+    </section>
+
 </body>
 </html>
