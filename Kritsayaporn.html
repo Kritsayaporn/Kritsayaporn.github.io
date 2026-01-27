@@ -2,7 +2,7 @@
 <html lang="th">
 <head>
     <meta charset="UTF-8">
-    <title>My Portfolio.</title>
+    <title>My Portfolio</title>
 
     <style>
         * {
@@ -13,12 +13,12 @@
         }
 
         body {
-            background: linear-gradient(135deg, #0f0f0f, #1c1c1c);
+            background: #000;
             color: #ffffff;
             overflow-x: hidden;
         }
 
-        /* ===== Header ห้อยด้านบน ===== */
+        /* ===== Header ===== */
         header {
             position: fixed;
             top: 0;
@@ -37,11 +37,6 @@
             transform: translateY(-100%);
         }
 
-        header h3 {
-            font-size: 22px;
-            color: #ffffff;
-        }
-
         header h3 span {
             color: #CCE9FD;
         }
@@ -52,11 +47,17 @@
             display: flex;
             align-items: center;
             padding: 0 80px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
-        /* ===== หน้าแรก ===== */
+        /* ===== หน้าแรก (มีรูปพื้นหลัง) ===== */
         .hero {
             justify-content: flex-start;
+            background-image:
+                linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.85)),
+                url("hero-bg.jpg");
         }
 
         .name-box h1 {
@@ -66,10 +67,9 @@
             transition: transform 0.3s ease, text-shadow 0.3s ease;
         }
 
-        /* เอฟเฟกต์เด้งตอน hover */
         .name-box h1:hover {
             transform: scale(1.08);
-            text-shadow: 0 0 15px rgba(30, 144, 255, 0.8);
+            text-shadow: 0 0 20px rgba(204,233,253,0.9);
         }
 
         .name-box span {
@@ -79,14 +79,16 @@
         .name-box p {
             margin-top: 15px;
             font-size: 18px;
-            color: #aaaaaa;
+            color: #dddddd;
         }
 
-        /* ===== หน้าสาขา ===== */
+        /* ===== หน้าสาขา (มีรูปพื้นหลัง) ===== */
         .major {
             justify-content: center;
             text-align: center;
-            background: linear-gradient(180deg, #1c1c1c, #0f0f0f);
+            background-image:
+                linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.9)),
+                url("major-bg.jpg");
         }
 
         .major h2 {
@@ -100,7 +102,7 @@
 
         .major p {
             font-size: 20px;
-            color: #cccccc;
+            color: #eeeeee;
         }
 
         .line {
@@ -144,10 +146,8 @@
             const currentScroll = window.pageYOffset;
 
             if (currentScroll > lastScroll) {
-                // เลื่อนลง -> ซ่อน
                 header.classList.add("hidden");
             } else {
-                // เลื่อนขึ้น -> โชว์
                 header.classList.remove("hidden");
             }
 
